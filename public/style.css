@@ -1,0 +1,13 @@
+.crossing{
+    text-decoration: line-through;
+}
+
+input , textarea , button {
+    display: block;
+    width: 300px;
+    margin: 20px;
+}
+
+input , button {
+    padding: 10px 0 10px 0;
+}

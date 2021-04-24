@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include('./layout/header') %>
+        <main>
+            <h2>
+                <%= data.title%>
+            </h2>
+            <p>
+                <%= data.description%>
+            </p>
+            <p>
+                <%= data.contact%>
+            </p>
+            <p>
+                <%= data.status%>
+            </p>
+            <p>
+                <%= data.category%>
+            </p>
+
+            <form action="/deleteTask/<%= data.id %>?_method=delete" method="POST">
+                <button>Delete</button>
+            </form>
+
+            <button id="updateBtn"> Update </button>
+            <section id="updateForm">
+                <form action="/updateTask/<%= data.id %>?_method=put" method="POST">
+                    <input type="text" name="title" value="<%= data.title %>">
+                    <textarea name="description" cols="30" rows="10"><%= data.description%></textarea>
+                    <input type="text" name="contact" value="<%= data.contact%>">
+                    <input type="text" name="status" value="<%= data.status%>">
+                    <input type="text" name="category" value="<%= data.category%>">
+                    <button type="submit">Update</button>
+                </form>
+            </section>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="/app.js"></script>
+</body>
+
+</html>
